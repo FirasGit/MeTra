@@ -1,0 +1,4 @@
+lr_scheduler: cosine_annealing_warm_restarts
+T_0: 30
+T_mult: 1
+eta_min: 1e-7
