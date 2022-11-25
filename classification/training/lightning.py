@@ -6,7 +6,6 @@ import torch.nn as nn
 import pytorch_lightning as pl
 import numpy as np
 from ..datasets.mimic_lab import LAST_CAREUNIT
-from classification.optimizers import SAM
 import wandb
 import pandas as pd
 from sklearn import metrics
@@ -18,8 +17,6 @@ class LightningClassifier(pl.LightningModule):
     def __init__(self, model: nn.Module, cfg: DictConfig):
         super().__init__()
         self.cfg = cfg
-        if self.cfg.optimizer.name == 'SAM':
-            self.automatic_optimization = False
         self.model = model
         self.metrics = {}
         # Log config hyperparameters
