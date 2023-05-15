@@ -1,0 +1,37 @@
+meta:
+  prefix_name: ???
+  output_dir: /data/home/firas/Desktop/work/combine_image_and_text/classification/checkpoints
+  evaluation_dir: /data/home/firas/Desktop/work/combine_image_and_text/evaluation_outputs
+  checkpoint_path: False
+  transforms: True
+  precision: 32
+  num_workers: 20
+  batch_size: 10
+  only_test: False
+  deterministic: True
+  cross_validation: False
+  folds: [0]
+  imbalance_handler: None
+  num_samples: None
+  gpus: [0]
+  seed: 379647
+defaults:
+  - dataset: mimic
+  - model: vit
+  - scheduler: none
+optimizer:
+  name: Adam
+  lr: 1e-5
+  lr_scheduler: plateau
+  scheduler_factor: 0.3
+  gamma: 0.5
+  patience: 15
+early_stopping:
+  use: False
+  patience: 40
+logger:
+  wandb:
+    project: combine_image_and_text
+    entity: infinite_imaging
+epochs: 150
+num_samples: None

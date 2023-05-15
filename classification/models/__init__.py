@@ -1,0 +1,1 @@
+from classification.models.multi_modal_pretrained_vit_lab import MultiModalPretrainedViTLab

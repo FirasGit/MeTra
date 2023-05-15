@@ -1,0 +1,2 @@
+lr_scheduler: cosine_annealing
+eta_min: 1e-7

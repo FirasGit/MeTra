@@ -1,0 +1,3 @@
+lr_scheduler: plateau
+scheduler_factor: 0.3
+patience: 15
